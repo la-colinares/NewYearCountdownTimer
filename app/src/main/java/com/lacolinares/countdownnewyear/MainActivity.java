@@ -3,14 +3,12 @@ package com.lacolinares.countdownnewyear;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.lacolinares.dynatime.DynaTime;
 
 import java.text.MessageFormat;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
@@ -40,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         mContext = this;
 
         mNextYear = getNextYear();
-        txtCountdown.setText(mNextYear + " New Year Countdown");
+        txtCountdown.setText(MessageFormat.format("{0} New Year Countdown", mNextYear));
         setCountDownTimer();
     }
 
